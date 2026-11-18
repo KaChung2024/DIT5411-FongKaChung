@@ -1,0 +1,5 @@
+-r requirements.txt
+# Python 3.13 CUDA wheel for the RTX 5080 under Ubuntu on Windows 11 WSL2.
+# Install the NVIDIA driver on Windows (570 or newer, 580 recommended).
+# Do not install nvidia-driver inside Ubuntu. TensorFlow 2.21+ publishes the cp313 wheel.
+tensorflow[and-cuda]>=2.21
