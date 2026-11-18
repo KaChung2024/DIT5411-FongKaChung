@@ -2,7 +2,7 @@
 
 THEi DIT5411 Machine Learning assignment: recognise handwritten traditional Chinese characters with TensorFlow.
 
-**Repository name:** `DIT5411-<your name>`
+**Repository name:** `DIT5411-FongKaChung`
 
 **Dataset:** 13,065 traditional Chinese characters, average ~50 samples each (300×300).  
 Source: [Traditional-Chinese-Handwriting-Dataset](https://github.com/AI-FREE-Team/Traditional-Chinese-Handwriting-Dataset)
@@ -51,7 +51,7 @@ All three models take a 64×64×1 uint8 image, rescale it to [0, 1] on the GPU, 
 | --- | --- | --- |
 | `mlp` | Flatten → Dense(1024) → Dense(512) → Dense(13065). Dropout 0.3. | Accuracy floor. No spatial filters. |
 | `small_cnn` | Six 3×3 convolutions, batch normalisation, stride-2 downsampling, global average pooling, Dense(13065). | Small convolutional baseline. |
-| `fast_resnet` | Residual stages at 64, 128, 256 and 512 channels, global average pooling, Dense(13065). ~0.5 billion multiply-adds per image. | Recommended model. Sized for high accuracy while still finishing a full epoch quickly on an RTX 5080. |
+| `fast_resnet` | Residual stages at 64, 128, 256 and 512 channels, global average pooling, Dense(13065). ~0.5 billion multiply-adds per image. | Recommended model. Highest test recognition rate on the RTX 5080 run below. |
 
 Common training settings for all models:
 
@@ -68,21 +68,22 @@ The checkpoint keeps the epoch with the highest **test** accuracy (the assignmen
 
 ## Recognition accuracy on the test set
 
-Results obtained on the full 13,065-character dataset (test set = held-out original images, never augmented).
+Results obtained on the full 13,065-character dataset (test set = held-out original images, never augmented). Twelve epochs on an NVIDIA RTX 5080. Epoch time is the steady time of one full pass over the 2,613,000 training images, including the test pass.
 
-| Model | Output neurons | Parameters | Test recognition rate | Top-5 |
-| --- | --- | --- | --- | --- |
-| mlp | 13065 | *(fill from result.json)* | *(fill from result.json)* | *(fill from result.json)* |
-| small_cnn | 13065 | *(fill from result.json)* | *(fill from result.json)* | *(fill from result.json)* |
-| **fast_resnet** | **13065** | **17,823,657** | **96.51%** | **99.40%** |
+| Model | Output neurons | Parameters | Test recognition rate | Top-5 | Epoch time |
+| --- | --- | --- | --- | --- | --- |
+| mlp | 13065 | 11,422,473 | 0.01% | 0.04% | 6.3 s |
+| small_cnn | 13065 | 3,932,073 | 98.28% | 99.83% | 24.7 s |
+| **fast_resnet** | **13065** | **17,823,657** | **99.10%** | **99.90%** | **128.6 s** |
 
 **fast_resnet details** (from `runs/fast_resnet/result.json`):
 
 - Parameters: 17,823,657
-- Test recognition rate: **96.51%** (`test_accuracy` = 0.96512)
-- Top-5 accuracy: **99.40%** (`test_top5` = 0.993997)
+- Test recognition rate: **99.10%**
+- Top-5 accuracy: **99.90%**
 - Training samples: 2,613,000 (13,065 × 200)
 - Test samples: 162,593
+- Steady epoch time: 128.6 s
 
 `result.json` also lists the 20 characters with the lowest per-class accuracy. These are useful for discussing remaining error cases (rare characters, visually similar glyphs, or characters with very few test samples).
 
