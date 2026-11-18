@@ -1,0 +1,181 @@
+{
+  "model": "small_cnn",
+  "description": "Six 3x3 convolutions with stride-2 downsampling, batch norm, global average pooling, then Dense(num_classes). A compact CNN between the MLP and the residual network.",
+  "img_size": 64,
+  "work_size": 128,
+  "num_classes": 13065,
+  "output_neurons": 13065,
+  "parameters": 3932073,
+  "batch_size": 4096,
+  "epochs": 12,
+  "base_lr": 0.004,
+  "label_smoothing": 0.05,
+  "xla": true,
+  "mixed_precision": "mixed_float16",
+  "steps_per_epoch": 624,
+  "steps_per_execution": 16,
+  "train_samples": 2613000,
+  "test_samples": 162593,
+  "data_dir": "data/packed",
+  "test_accuracy": 0.9828036877356344,
+  "test_top5": 0.9982779086430535,
+  "recognition_rate_percent": 98.28036877356344,
+  "hardest_characters": [
+    {
+      "character": "8459",
+      "index": 11354,
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 20
+    },
+    {
+      "character": "6533",
+      "index": 9215,
+      "accuracy": 0.0,
+      "correct": 0,
+      "total": 1
+    },
+    {
+      "character": "10785",
+      "index": 874,
+      "accuracy": 0.058823529411764705,
+      "correct": 1,
+      "total": 17
+    },
+    {
+      "character": "1691",
+      "index": 3835,
+      "accuracy": 0.16666666666666666,
+      "correct": 2,
+      "total": 12
+    },
+    {
+      "character": "11073",
+      "index": 1195,
+      "accuracy": 0.2,
+      "correct": 2,
+      "total": 10
+    },
+    {
+      "character": "5932",
+      "index": 8547,
+      "accuracy": 0.2,
+      "correct": 2,
+      "total": 10
+    },
+    {
+      "character": "9713",
+      "index": 12748,
+      "accuracy": 0.2777777777777778,
+      "correct": 5,
+      "total": 18
+    },
+    {
+      "character": "11595",
+      "index": 1774,
+      "accuracy": 0.3,
+      "correct": 3,
+      "total": 10
+    },
+    {
+      "character": "5967",
+      "index": 8585,
+      "accuracy": 0.3,
+      "correct": 3,
+      "total": 10
+    },
+    {
+      "character": "5922",
+      "index": 8536,
+      "accuracy": 0.3,
+      "correct": 3,
+      "total": 10
+    },
+    {
+      "character": "1655",
+      "index": 3795,
+      "accuracy": 0.3333333333333333,
+      "correct": 4,
+      "total": 12
+    },
+    {
+      "character": "4767",
+      "index": 7252,
+      "accuracy": 0.3333333333333333,
+      "correct": 3,
+      "total": 9
+    },
+    {
+      "character": "2168",
+      "index": 4365,
+      "accuracy": 0.36363636363636365,
+      "correct": 4,
+      "total": 11
+    },
+    {
+      "character": "6059",
+      "index": 8688,
+      "accuracy": 0.4,
+      "correct": 4,
+      "total": 10
+    },
+    {
+      "character": "1285",
+      "index": 3168,
+      "accuracy": 0.4,
+      "correct": 4,
+      "total": 10
+    },
+    {
+      "character": "6319",
+      "index": 8977,
+      "accuracy": 0.4,
+      "correct": 4,
+      "total": 10
+    },
+    {
+      "character": "8737",
+      "index": 11663,
+      "accuracy": 0.42105263157894735,
+      "correct": 8,
+      "total": 19
+    },
+    {
+      "character": "7333",
+      "index": 10104,
+      "accuracy": 0.4444444444444444,
+      "correct": 4,
+      "total": 9
+    },
+    {
+      "character": "6974",
+      "index": 9704,
+      "accuracy": 0.4444444444444444,
+      "correct": 4,
+      "total": 9
+    },
+    {
+      "character": "5413",
+      "index": 7971,
+      "accuracy": 0.4444444444444444,
+      "correct": 4,
+      "total": 9
+    }
+  ],
+  "epoch_seconds": [
+    24.69,
+    24.62,
+    24.59,
+    24.63,
+    24.65,
+    24.75,
+    24.73,
+    24.72,
+    24.78,
+    24.67,
+    24.66,
+    24.83
+  ],
+  "steady_epoch_seconds": 24.67,
+  "final_val_accuracy": 0.9828162789344788
+}

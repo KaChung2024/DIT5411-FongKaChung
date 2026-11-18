@@ -1,0 +1,545 @@
+[
+  {
+    "model": "mlp",
+    "description": "Fully connected baseline. The 64x64 image is flattened to 4,096 values, then Dense(1024) -> Dense(512) -> Dense(num_classes). No spatial filters, so it is the accuracy floor and the fastest epoch.",
+    "img_size": 64,
+    "work_size": 128,
+    "num_classes": 13065,
+    "output_neurons": 13065,
+    "parameters": 11422473,
+    "batch_size": 4096,
+    "epochs": 12,
+    "base_lr": 0.004,
+    "label_smoothing": 0.05,
+    "xla": true,
+    "mixed_precision": "mixed_float16",
+    "steps_per_epoch": 624,
+    "steps_per_execution": 16,
+    "train_samples": 2613000,
+    "test_samples": 162593,
+    "data_dir": "data/packed",
+    "test_accuracy": 0.00012300652549617757,
+    "test_top5": 0.0004366731655114304,
+    "recognition_rate_percent": 0.012300652549617758,
+    "hardest_characters": [
+      {
+        "character": "6082",
+        "index": 8714,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6071",
+        "index": 8702,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6072",
+        "index": 8703,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6073",
+        "index": 8704,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6074",
+        "index": 8705,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6075",
+        "index": 8706,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6076",
+        "index": 8707,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6077",
+        "index": 8708,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6078",
+        "index": 8709,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 1
+      },
+      {
+        "character": "6079",
+        "index": 8710,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "608",
+        "index": 8711,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 11
+      },
+      {
+        "character": "6080",
+        "index": 8712,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6081",
+        "index": 8713,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6070",
+        "index": 8701,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6083",
+        "index": 8715,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6084",
+        "index": 8716,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6085",
+        "index": 8717,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6086",
+        "index": 8718,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6087",
+        "index": 8719,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      },
+      {
+        "character": "6088",
+        "index": 8720,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 10
+      }
+    ],
+    "epoch_seconds": [
+      9.86,
+      6.73,
+      6.72,
+      6.6,
+      6.54,
+      6.32,
+      6.25,
+      6.21,
+      6.21,
+      6.18,
+      6.16,
+      6.21
+    ],
+    "steady_epoch_seconds": 6.25,
+    "final_val_accuracy": 6.886017945362255e-05
+  },
+  {
+    "model": "small_cnn",
+    "description": "Six 3x3 convolutions with stride-2 downsampling, batch norm, global average pooling, then Dense(num_classes). A compact CNN between the MLP and the residual network.",
+    "img_size": 64,
+    "work_size": 128,
+    "num_classes": 13065,
+    "output_neurons": 13065,
+    "parameters": 3932073,
+    "batch_size": 4096,
+    "epochs": 12,
+    "base_lr": 0.004,
+    "label_smoothing": 0.05,
+    "xla": true,
+    "mixed_precision": "mixed_float16",
+    "steps_per_epoch": 624,
+    "steps_per_execution": 16,
+    "train_samples": 2613000,
+    "test_samples": 162593,
+    "data_dir": "data/packed",
+    "test_accuracy": 0.9828036877356344,
+    "test_top5": 0.9982779086430535,
+    "recognition_rate_percent": 98.28036877356344,
+    "hardest_characters": [
+      {
+        "character": "8459",
+        "index": 11354,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 20
+      },
+      {
+        "character": "6533",
+        "index": 9215,
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 1
+      },
+      {
+        "character": "10785",
+        "index": 874,
+        "accuracy": 0.058823529411764705,
+        "correct": 1,
+        "total": 17
+      },
+      {
+        "character": "1691",
+        "index": 3835,
+        "accuracy": 0.16666666666666666,
+        "correct": 2,
+        "total": 12
+      },
+      {
+        "character": "11073",
+        "index": 1195,
+        "accuracy": 0.2,
+        "correct": 2,
+        "total": 10
+      },
+      {
+        "character": "5932",
+        "index": 8547,
+        "accuracy": 0.2,
+        "correct": 2,
+        "total": 10
+      },
+      {
+        "character": "9713",
+        "index": 12748,
+        "accuracy": 0.2777777777777778,
+        "correct": 5,
+        "total": 18
+      },
+      {
+        "character": "11595",
+        "index": 1774,
+        "accuracy": 0.3,
+        "correct": 3,
+        "total": 10
+      },
+      {
+        "character": "5967",
+        "index": 8585,
+        "accuracy": 0.3,
+        "correct": 3,
+        "total": 10
+      },
+      {
+        "character": "5922",
+        "index": 8536,
+        "accuracy": 0.3,
+        "correct": 3,
+        "total": 10
+      },
+      {
+        "character": "1655",
+        "index": 3795,
+        "accuracy": 0.3333333333333333,
+        "correct": 4,
+        "total": 12
+      },
+      {
+        "character": "4767",
+        "index": 7252,
+        "accuracy": 0.3333333333333333,
+        "correct": 3,
+        "total": 9
+      },
+      {
+        "character": "2168",
+        "index": 4365,
+        "accuracy": 0.36363636363636365,
+        "correct": 4,
+        "total": 11
+      },
+      {
+        "character": "6059",
+        "index": 8688,
+        "accuracy": 0.4,
+        "correct": 4,
+        "total": 10
+      },
+      {
+        "character": "1285",
+        "index": 3168,
+        "accuracy": 0.4,
+        "correct": 4,
+        "total": 10
+      },
+      {
+        "character": "6319",
+        "index": 8977,
+        "accuracy": 0.4,
+        "correct": 4,
+        "total": 10
+      },
+      {
+        "character": "8737",
+        "index": 11663,
+        "accuracy": 0.42105263157894735,
+        "correct": 8,
+        "total": 19
+      },
+      {
+        "character": "7333",
+        "index": 10104,
+        "accuracy": 0.4444444444444444,
+        "correct": 4,
+        "total": 9
+      },
+      {
+        "character": "6974",
+        "index": 9704,
+        "accuracy": 0.4444444444444444,
+        "correct": 4,
+        "total": 9
+      },
+      {
+        "character": "5413",
+        "index": 7971,
+        "accuracy": 0.4444444444444444,
+        "correct": 4,
+        "total": 9
+      }
+    ],
+    "epoch_seconds": [
+      24.69,
+      24.62,
+      24.59,
+      24.63,
+      24.65,
+      24.75,
+      24.73,
+      24.72,
+      24.78,
+      24.67,
+      24.66,
+      24.83
+    ],
+    "steady_epoch_seconds": 24.67,
+    "final_val_accuracy": 0.9828162789344788
+  },
+  {
+    "model": "fast_resnet",
+    "description": "Residual CNN recommended for the RTX 5080. A stride-2 stem, then residual stages at 64, 128, 256 and 512 channels, global average pooling, and Dense(num_classes). About 0.5 billion multiply-adds per 64x64 image, which is the band that fills a 5080 and still finishes an epoch of 2.61 million images inside 60 seconds.",
+    "img_size": 64,
+    "work_size": 128,
+    "num_classes": 13065,
+    "output_neurons": 13065,
+    "parameters": 17823657,
+    "batch_size": 2432,
+    "epochs": 12,
+    "base_lr": 0.003082207001484488,
+    "label_smoothing": 0.05,
+    "xla": true,
+    "mixed_precision": "mixed_float16",
+    "steps_per_epoch": 1072,
+    "steps_per_execution": 16,
+    "train_samples": 2613000,
+    "test_samples": 162593,
+    "data_dir": "data/packed",
+    "test_accuracy": 0.9910266739650538,
+    "test_top5": 0.9990159477960305,
+    "recognition_rate_percent": 99.10266739650538,
+    "hardest_characters": [
+      {
+        "character": "8459",
+        "index": 11354,
+        "accuracy": 0.05,
+        "correct": 1,
+        "total": 20
+      },
+      {
+        "character": "11073",
+        "index": 1195,
+        "accuracy": 0.1,
+        "correct": 1,
+        "total": 10
+      },
+      {
+        "character": "5932",
+        "index": 8547,
+        "accuracy": 0.2,
+        "correct": 2,
+        "total": 10
+      },
+      {
+        "character": "6319",
+        "index": 8977,
+        "accuracy": 0.2,
+        "correct": 2,
+        "total": 10
+      },
+      {
+        "character": "1655",
+        "index": 3795,
+        "accuracy": 0.25,
+        "correct": 3,
+        "total": 12
+      },
+      {
+        "character": "1272",
+        "index": 3024,
+        "accuracy": 0.3,
+        "correct": 3,
+        "total": 10
+      },
+      {
+        "character": "11595",
+        "index": 1774,
+        "accuracy": 0.3,
+        "correct": 3,
+        "total": 10
+      },
+      {
+        "character": "4767",
+        "index": 7252,
+        "accuracy": 0.3333333333333333,
+        "correct": 3,
+        "total": 9
+      },
+      {
+        "character": "1691",
+        "index": 3835,
+        "accuracy": 0.3333333333333333,
+        "correct": 4,
+        "total": 12
+      },
+      {
+        "character": "5967",
+        "index": 8585,
+        "accuracy": 0.4,
+        "correct": 4,
+        "total": 10
+      },
+      {
+        "character": "5927",
+        "index": 8541,
+        "accuracy": 0.4,
+        "correct": 4,
+        "total": 10
+      },
+      {
+        "character": "1271",
+        "index": 3013,
+        "accuracy": 0.4,
+        "correct": 4,
+        "total": 10
+      },
+      {
+        "character": "10785",
+        "index": 874,
+        "accuracy": 0.4117647058823529,
+        "correct": 7,
+        "total": 17
+      },
+      {
+        "character": "12300",
+        "index": 2559,
+        "accuracy": 0.5,
+        "correct": 5,
+        "total": 10
+      },
+      {
+        "character": "6495",
+        "index": 9172,
+        "accuracy": 0.5,
+        "correct": 5,
+        "total": 10
+      },
+      {
+        "character": "5922",
+        "index": 8536,
+        "accuracy": 0.5,
+        "correct": 5,
+        "total": 10
+      },
+      {
+        "character": "1285",
+        "index": 3168,
+        "accuracy": 0.5,
+        "correct": 5,
+        "total": 10
+      },
+      {
+        "character": "1274",
+        "index": 3046,
+        "accuracy": 0.5,
+        "correct": 5,
+        "total": 10
+      },
+      {
+        "character": "11546",
+        "index": 1720,
+        "accuracy": 0.5,
+        "correct": 5,
+        "total": 10
+      },
+      {
+        "character": "2168",
+        "index": 4365,
+        "accuracy": 0.5454545454545454,
+        "correct": 6,
+        "total": 11
+      }
+    ],
+    "epoch_seconds": [
+      128.64,
+      128.6,
+      128.81,
+      128.75,
+      128.48,
+      128.6,
+      128.81,
+      128.65,
+      128.55,
+      128.56,
+      128.76,
+      128.63
+    ],
+    "steady_epoch_seconds": 128.63,
+    "final_val_accuracy": 0.9910162687301636
+  }
+]
